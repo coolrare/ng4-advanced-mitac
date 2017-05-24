@@ -8,9 +8,17 @@ import { Router, ActivatedRoute } from "@angular/router";
 })
 export class CardsComponent implements OnInit {
 
+  type = '';
+
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+
+    this.type = this.route.snapshot.params['type'];
+
+    // this.route.params.subscribe(params => {
+    //   this.type = params['type'];
+    // });
   }
 
 }
