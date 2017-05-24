@@ -2,8 +2,8 @@
   {{title}}
 </h1>
 <ul>
-  <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
-  <li><a routerLink="/page1" routerLinkActive="active">Page 1</a></li>
-  <li><a [routerLink]="makeLink()" routerLinkActive="active">Page 2</a></li>
+  <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="/">Home</a></li>
+  <li routerLinkActive="active"><a routerLink="/page1">Page 1</a></li>
+  <li routerLinkActive="active"><a [routerLink]="makeLink()">Page 2</a></li>
 </ul>
 <router-outlet></router-outlet>
