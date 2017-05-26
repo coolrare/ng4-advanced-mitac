@@ -10,11 +10,13 @@ export class LoginGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    if (next.queryParams['apikey'] == '123') {
+
+    if (localStorage['user']) {
       return true;
     } else {
       this.router.navigateByUrl('/login');
       return false;
     }
+
   }
 }
