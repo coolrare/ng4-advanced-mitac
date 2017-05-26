@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginGuard } from "app/login.guard";
 import { ClassicComponent } from './forms/classic/classic.component';
+import { ReactiveComponent } from './forms/reactive/reactive.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ClassicComponent } from './forms/classic/classic.component';
     CardsComponent,
     LoginComponent,
     LayoutComponent,
-    ClassicComponent
+    ClassicComponent,
+    ReactiveComponent
   ],
   imports: [
     BrowserModule,

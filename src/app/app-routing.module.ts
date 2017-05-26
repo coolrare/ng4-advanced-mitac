@@ -9,19 +9,25 @@ import { LoginComponent } from "app/login/login.component";
 import { LayoutComponent } from "app/layout/layout.component";
 import { LoginGuard } from "app/login.guard";
 import { ClassicComponent } from "app/forms/classic/classic.component";
+import { ReactiveComponent } from "app/forms/reactive/reactive.component";
 
 const routes: Routes = [
-  { path: '', component: LayoutComponent, children: [
-    { path: '', redirectTo: 'forms/classic', pathMatch: 'full' },
-    { path: 'dashboard', component: DashboardComponent },
-    { path: 'cards/:type', component: CardsComponent, canActivate: [LoginGuard] },
-    { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
-    { path: 'forms', children: [
-      { path: 'classic', component: ClassicComponent }
-    ]},
-    { path: 'page1', component: Page1Component, data: { title: 'This is Page 1' } },
-    { path: 'page2/sub1/sub2', component: Page2Component }
-  ]},
+  {
+    path: '', component: LayoutComponent, children: [
+      { path: '', redirectTo: 'forms/reactive', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'cards/:type', component: CardsComponent, canActivate: [LoginGuard] },
+      { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
+      {
+        path: 'forms', children: [
+          { path: 'classic', component: ClassicComponent },
+          { path: 'reactive', component: ReactiveComponent }
+        ]
+      },
+      { path: 'page1', component: Page1Component, data: { title: 'This is Page 1' } },
+      { path: 'page2/sub1/sub2', component: Page2Component }
+    ]
+  },
   { path: 'login', component: LoginComponent },
   fallbackRoute
 ];
