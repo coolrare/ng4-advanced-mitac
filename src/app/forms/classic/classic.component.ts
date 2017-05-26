@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClassicComponent implements OnInit {
 
+  model: any = {
+    product_name: 'BMW',
+    price: 1022338
+  };
+
   constructor() { }
 
   ngOnInit() {

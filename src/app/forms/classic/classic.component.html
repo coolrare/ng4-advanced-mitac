@@ -1,23 +1,43 @@
 <section>
   <div class="container-fluid">
     <h5 class="mt0">Classic form controls and custom variants</h5>
-    <p class="mb-lg">Standard Bootstrap form and input controls with customized UI variations</p>
+    <pre>{{ model | json }}</pre>
     <div class="card">
       <div class="card-body">
         <form method="get" action="/" class="form-horizontal">
           <fieldset>
-            <div class="form-group">
-              <label class="col-sm-2 control-label">Rounded Corners</label>
+            <div class="form-group" [class.has-error]="tProcductName.invalid">
+              <label class="col-sm-2 control-label">Product Name</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control rounded">
+                <input type="text" class="form-control rounded" #tProcductName="ngModel"
+                  name="product_name" [(ngModel)]="model.product_name" required>
+                <span class="help-block">
+                  <pre>value = {{ tProcductName.value | json }}</pre>
+                  <pre>pristine = {{ tProcductName.pristine | json }}</pre>
+                  <pre>dirty = {{ tProcductName.dirty | json }}</pre>
+                  <pre>touched = {{ tProcductName.touched | json }}</pre>
+                  <pre>untouched = {{ tProcductName.untouched | json }}</pre>
+                  <pre>valid = {{ tProcductName.valid | json }}</pre>
+                  <pre>invalid = {{ tProcductName.invalid | json }}</pre>
+                </span>
               </div>
             </div>
           </fieldset>
           <fieldset>
-            <div class="form-group">
-              <label class="col-sm-2 control-label">With help</label>
+            <div class="form-group" [class.has-error]="tProcductName.invalid">
+              <label class="col-sm-2 control-label">Unit Price</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control"><span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                <input type="number" class="form-control" #tPrice="ngModel"
+                       name="price" [(ngModel)]="model.price" required>
+                <span class="help-block">
+                  <pre>value = {{ tPrice.value | json }}</pre>
+                  <pre>pristine = {{ tPrice.pristine | json }}</pre>
+                  <pre>dirty = {{ tPrice.dirty | json }}</pre>
+                  <pre>touched = {{ tPrice.touched | json }}</pre>
+                  <pre>untouched = {{ tPrice.untouched | json }}</pre>
+                  <pre>valid = {{ tPrice.valid | json }}</pre>
+                  <pre>invalid = {{ tPrice.invalid | json }}</pre>
+                </span>
               </div>
             </div>
           </fieldset>
