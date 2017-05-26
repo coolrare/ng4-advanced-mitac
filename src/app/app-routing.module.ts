@@ -7,12 +7,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardsComponent } from './cards/cards.component';
 import { LoginComponent } from "app/login/login.component";
 import { LayoutComponent } from "app/layout/layout.component";
+import { LoginGuard } from "app/login.guard";
 
 const routes: Routes = [
   { path: '', component: LayoutComponent, children: [
     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     { path: 'dashboard', component: DashboardComponent },
-    { path: 'cards/:type', component: CardsComponent },
+    { path: 'cards/:type', component: CardsComponent, canActivate: [LoginGuard] },
     { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
     { path: 'page1', component: Page1Component, data: { title: 'This is Page 1' } },
     { path: 'page2/sub1/sub2', component: Page2Component }
