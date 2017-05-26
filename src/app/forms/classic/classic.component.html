@@ -34,26 +34,31 @@
               </div>
             </div>
           </fieldset>
-          <fieldset *ngIf="tProductName.valid">
-            <div class="form-group" [class.has-error]="tPrice.invalid">
-              <label class="col-sm-2 control-label">Unit Price</label>
-              <div class="col-sm-10">
-                <input type="number" class="form-control" #tPrice="ngModel"
-                       name="price" [(ngModel)]="model.price"
-                       required pattern="\d{1,5}">
-                <span class="help-block">
-                  <pre>value = {{ tPrice.value | json }}</pre>
-                  <pre>pristine = {{ tPrice.pristine | json }}</pre>
-                  <pre>dirty = {{ tPrice.dirty | json }}</pre>
-                  <pre>touched = {{ tPrice.touched | json }}</pre>
-                  <pre>untouched = {{ tPrice.untouched | json }}</pre>
-                  <pre>valid = {{ tPrice.valid | json }}</pre>
-                  <pre>invalid = {{ tPrice.invalid | json }}</pre>
-                  <pre>errors = {{ tPrice.errors | json }}</pre>
-                </span>
+
+          <div ngModelGroup="group1" #tGroup1="ngModelGroup">
+
+            <fieldset>
+              <div class="form-group" [class.has-error]="tPrice.invalid">
+                <label class="col-sm-2 control-label">Unit Price</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" #tPrice="ngModel"
+                        name="price" [(ngModel)]="model.price"
+                        required pattern="\d{1,5}">
+                  <span class="help-block">
+                    <pre>value = {{ tPrice.value | json }}</pre>
+                    <pre>pristine = {{ tPrice.pristine | json }}</pre>
+                    <pre>dirty = {{ tPrice.dirty | json }}</pre>
+                    <pre>touched = {{ tPrice.touched | json }}</pre>
+                    <pre>untouched = {{ tPrice.untouched | json }}</pre>
+                    <pre>valid = {{ tPrice.valid | json }}</pre>
+                    <pre>invalid = {{ tPrice.invalid | json }}</pre>
+                    <pre>errors = {{ tPrice.errors | json }}</pre>
+                  </span>
+                </div>
               </div>
-            </div>
-          </fieldset>
+            </fieldset>
+
+          </div>
 
           <input type="submit" value="送出表單">
 
