@@ -10,8 +10,6 @@ import { Page2Component } from './page2/page2.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardsComponent } from './cards/cards.component';
 
-import { ChartsModule } from './charts/charts.module';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +22,6 @@ import { ChartsModule } from './charts/charts.module';
     BrowserModule,
     FormsModule,
     HttpModule,
-    ChartsModule,
     AppRoutingModule
   ],
   providers: [],

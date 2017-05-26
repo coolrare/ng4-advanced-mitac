@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'cards/:type', component: CardsComponent },
+  { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
   { path: 'page1', component: Page1Component, data: { title: 'This is Page 1' } },
   { path: 'page2/sub1/sub2', component: Page2Component },
   fallbackRoute
