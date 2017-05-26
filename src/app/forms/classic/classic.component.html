@@ -1,10 +1,19 @@
 <section>
   <div class="container-fluid">
     <h5 class="mt0">Classic form controls and custom variants</h5>
+    <h6>資料模型</h6>
     <pre>{{ model | json }}</pre>
+    <h6>表單模型</h6>
+    <pre>value = {{ form.value | json }}</pre>
+    <pre>pristine = {{ form.pristine | json }}</pre>
+    <pre>dirty = {{ form.dirty | json }}</pre>
+    <pre>touched = {{ form.touched | json }}</pre>
+    <pre>untouched = {{ form.untouched | json }}</pre>
+    <pre>valid = {{ form.valid | json }}</pre>
+    <pre>invalid = {{ form.invalid | json }}</pre>
     <div class="card">
       <div class="card-body">
-        <form method="get" action="/" class="form-horizontal">
+        <form method="get" action="/" class="form-horizontal" (ngSubmit)="doSubmit(form)" #form="ngForm">
           <fieldset>
             <div class="form-group" [class.has-error]="tProductName.invalid">
               <label class="col-sm-2 control-label">Product Name</label>
@@ -41,6 +50,9 @@
               </div>
             </div>
           </fieldset>
+
+          <input type="submit" value="送出表單">
+
           <fieldset>
             <div class="form-group">
               <label for="input-id-1" class="col-sm-2 control-label">Label focus</label>

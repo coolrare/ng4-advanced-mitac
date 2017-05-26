@@ -1,4 +1,6 @@
+import {Http} from '@angular/http';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from "@angular/forms";
 
 @Component({
   selector: 'app-classic',
@@ -12,9 +14,12 @@ export class ClassicComponent implements OnInit {
     price: 1022338
   };
 
-  constructor() { }
+  constructor(private http: Http) { }
 
   ngOnInit() {
   }
 
+  doSubmit(form: NgForm) {
+    console.log(form.value);
+  }
 }
