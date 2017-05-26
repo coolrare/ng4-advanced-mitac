@@ -22,14 +22,18 @@
               </div>
             </div>
           </fieldset>
-          <fieldset>
-            <div class="form-group">
-              <label class="col-sm-2 control-label">Description</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" formControlName="desc"><span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+
+          <div formGroupName="metadata">
+            <fieldset>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Description</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" formControlName="desc"><span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                </div>
               </div>
-            </div>
-          </fieldset>
+            </fieldset>
+          </div>
+
           <fieldset>
             <div class="form-group">
               <label for="input-id-1" class="col-sm-2 control-label">Label focus</label>

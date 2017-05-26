@@ -15,7 +15,12 @@ export class ReactiveComponent implements OnInit {
   ngOnInit() {
     this.form = this.fb.group({
       'title': 'My Title',
-      'desc': 'Sample Description'
+
+      'metadata': this.fb.group({
+
+        'desc': 'Sample Description'
+
+      })
     });
   }
 
