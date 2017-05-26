@@ -36,20 +36,11 @@
 
           <div formArrayName="items">
 
-            <fieldset>
+            <fieldset *ngFor="let ctrl of form.controls['items'].controls; let idx = index;">
               <div class="form-group">
                 <label for="input-id-1" class="col-sm-2 control-label">地址清單 1</label>
                 <div class="col-sm-10">
-                  <input id="input-id-1" type="text" class="form-control" formControlName="0">
-                </div>
-              </div>
-            </fieldset>
-
-            <fieldset>
-              <div class="form-group">
-                <label for="input-id-1" class="col-sm-2 control-label">地址清單 2</label>
-                <div class="col-sm-10">
-                  <input id="input-id-1" type="text" class="form-control" formControlName="1">
+                  <input id="input-id-1" type="text" class="form-control" [formControlName]="idx">
                 </div>
               </div>
             </fieldset>
