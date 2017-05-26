@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, FormArray } from "@angular/forms";
 
 @Component({
   selector: 'app-reactive',
@@ -27,6 +27,11 @@ export class ReactiveComponent implements OnInit {
         this.fb.control('Test 2')
       ])
     });
+  }
+
+  addNewItem() {
+    let arr = this.form.controls['items'] as FormArray;
+    arr.push(this.fb.control('New ' + (arr.length+1)));
   }
 
 }

@@ -38,7 +38,7 @@
 
             <fieldset *ngFor="let ctrl of form.controls['items'].controls; let idx = index;">
               <div class="form-group">
-                <label for="input-id-1" class="col-sm-2 control-label">地址清單 1</label>
+                <label for="input-id-1" class="col-sm-2 control-label">地址清單 {{idx+1}}</label>
                 <div class="col-sm-10">
                   <input id="input-id-1" type="text" class="form-control" [formControlName]="idx">
                 </div>
@@ -46,6 +46,8 @@
             </fieldset>
 
           </div>
+
+          <button type="button" (click)="addNewItem()">新增地址</button>
 
           <fieldset>
             <div class="form-group">
