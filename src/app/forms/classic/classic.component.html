@@ -6,25 +6,25 @@
       <div class="card-body">
         <form method="get" action="/" class="form-horizontal">
           <fieldset>
-            <div class="form-group" [class.has-error]="tProcductName.invalid">
+            <div class="form-group" [class.has-error]="tProductName.invalid">
               <label class="col-sm-2 control-label">Product Name</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control rounded" #tProcductName="ngModel"
+                <input type="text" class="form-control rounded" #tProductName="ngModel"
                   name="product_name" [(ngModel)]="model.product_name" required>
                 <span class="help-block">
-                  <pre>value = {{ tProcductName.value | json }}</pre>
-                  <pre>pristine = {{ tProcductName.pristine | json }}</pre>
-                  <pre>dirty = {{ tProcductName.dirty | json }}</pre>
-                  <pre>touched = {{ tProcductName.touched | json }}</pre>
-                  <pre>untouched = {{ tProcductName.untouched | json }}</pre>
-                  <pre>valid = {{ tProcductName.valid | json }}</pre>
-                  <pre>invalid = {{ tProcductName.invalid | json }}</pre>
+                  <pre>value = {{ tProductName.value | json }}</pre>
+                  <pre>pristine = {{ tProductName.pristine | json }}</pre>
+                  <pre>dirty = {{ tProductName.dirty | json }}</pre>
+                  <pre>touched = {{ tProductName.touched | json }}</pre>
+                  <pre>untouched = {{ tProductName.untouched | json }}</pre>
+                  <pre>valid = {{ tProductName.valid | json }}</pre>
+                  <pre>invalid = {{ tProductName.invalid | json }}</pre>
                 </span>
               </div>
             </div>
           </fieldset>
-          <fieldset>
-            <div class="form-group" [class.has-error]="tProcductName.invalid">
+          <fieldset *ngIf="tProductName.valid">
+            <div class="form-group" [class.has-error]="tPrice.invalid">
               <label class="col-sm-2 control-label">Unit Price</label>
               <div class="col-sm-10">
                 <input type="number" class="form-control" #tPrice="ngModel"
