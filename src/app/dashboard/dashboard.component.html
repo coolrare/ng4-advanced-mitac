@@ -26,7 +26,8 @@
         </div>
       </div>
       <div class="col-xs-6 col-lg-3"
-           [routerLink]="['/cards', '100', { key1: 'Will', key2: 'Huang' }]">
+           [routerLink]="['/cards', '100']"
+           [queryParams]="{ key1: 'Will', key2: 'Huang' }">
         <div class="card">
           <div class="card-body pv">
             <div class="clearfix">

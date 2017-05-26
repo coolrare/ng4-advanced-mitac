@@ -18,9 +18,13 @@ export class CardsComponent implements OnInit {
     // this.type = this.route.snapshot.params['type'];
     this.route.params.subscribe(params => {
       this.type = params['type'];
+    });
+
+    this.route.queryParams.subscribe(params => {
       this.key1 = params['key1'];
       this.key2 = params['key2'];
     });
+
   }
 
   goCards(num: number) {
