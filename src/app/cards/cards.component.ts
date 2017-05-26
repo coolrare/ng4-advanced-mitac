@@ -1,5 +1,5 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cards',
@@ -9,6 +9,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class CardsComponent implements OnInit {
 
   type = '';
+  key1 = '';
+  key2 = '';
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 
@@ -16,6 +18,8 @@ export class CardsComponent implements OnInit {
     // this.type = this.route.snapshot.params['type'];
     this.route.params.subscribe(params => {
       this.type = params['type'];
+      this.key1 = params['key1'];
+      this.key2 = params['key2'];
     });
   }
 
