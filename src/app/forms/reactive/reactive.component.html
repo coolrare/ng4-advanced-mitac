@@ -34,14 +34,28 @@
             </fieldset>
           </div>
 
-          <fieldset>
-            <div class="form-group">
-              <label for="input-id-1" class="col-sm-2 control-label">Label focus</label>
-              <div class="col-sm-10">
-                <input id="input-id-1" type="text" class="form-control">
+          <div formArrayName="items">
+
+            <fieldset>
+              <div class="form-group">
+                <label for="input-id-1" class="col-sm-2 control-label">地址清單 1</label>
+                <div class="col-sm-10">
+                  <input id="input-id-1" type="text" class="form-control" formControlName="0">
+                </div>
               </div>
-            </div>
-          </fieldset>
+            </fieldset>
+
+            <fieldset>
+              <div class="form-group">
+                <label for="input-id-1" class="col-sm-2 control-label">地址清單 2</label>
+                <div class="col-sm-10">
+                  <input id="input-id-1" type="text" class="form-control" formControlName="1">
+                </div>
+              </div>
+            </fieldset>
+
+          </div>
+
           <fieldset>
             <div class="form-group">
               <label class="col-sm-2 control-label">Password</label>

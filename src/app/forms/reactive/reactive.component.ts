@@ -20,7 +20,12 @@ export class ReactiveComponent implements OnInit {
 
         'desc': 'Sample Description'
 
-      })
+      }),
+
+      'items': this.fb.array([
+        this.fb.control('Test 1'),
+        this.fb.control('Test 2')
+      ])
     });
   }
 
