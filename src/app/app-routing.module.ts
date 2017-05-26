@@ -8,13 +8,17 @@ import { CardsComponent } from './cards/cards.component';
 import { LoginComponent } from "app/login/login.component";
 import { LayoutComponent } from "app/layout/layout.component";
 import { LoginGuard } from "app/login.guard";
+import { ClassicComponent } from "app/forms/classic/classic.component";
 
 const routes: Routes = [
   { path: '', component: LayoutComponent, children: [
-    { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+    { path: '', redirectTo: 'forms/classic', pathMatch: 'full' },
     { path: 'dashboard', component: DashboardComponent },
     { path: 'cards/:type', component: CardsComponent, canActivate: [LoginGuard] },
     { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
+    { path: 'forms', children: [
+      { path: 'classic', component: ClassicComponent }
+    ]},
     { path: 'page1', component: Page1Component, data: { title: 'This is Page 1' } },
     { path: 'page2/sub1/sub2', component: Page2Component }
   ]},
